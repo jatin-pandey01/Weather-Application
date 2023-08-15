@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Weather Application, weather news">
+    <meta name="description" content="It is weather application, give you all information of weather ">
+    <meta name="author" content="Jatin Pandey">
+    <link rel="shortcut icon" href="./images/favicon.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <title>Weather Application</title>
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <h1>Weather app</h1>
+
+        <div class="tab-container">
+            <p class="tab" data-userWeather>Your Weather</p>
+            <p class="tab" data-searchWeather>Search Weather</p>
+        </div>
+
+        
+        <div class="weather-container">
+            
+            <!-- Grant location container -->
+
+            <div class="sub-container grant-location-container">
+                <p><i class="fa-solid fa-location-dot"></i></p>
+                <p>Grant Location Access</p>
+                <p data-Access>Allow Access To Get Weather Information</p>
+                <button class="btn" type="submit" data-grantAccess>Grant Access</button>
+            </div>
+
+            <!-- Search location container -->
+
+            <form class="form-container" data-searchForm>
+                <input placeholder="Search for City ..." data-searchInput>
+                <button search-btn><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+
+            <!-- Loading screen container -->
+            <div class="sub-container loading-container">
+                <i class="fa-solid fa-spinner"></i>
+                <p>Loading</p>
+            </div>
+
+            <div class="error-container">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <p>City not Found</p>
+            </div>
+
+            <!-- Show  weather information -->
+            <div class="sub-container user-info-container">
+
+                <div class="name">
+                    <p data-cityName></p>
+                    <img data-countryIcon></img>
+                </div>
+                
+                <p data-weatherDesc></p>
+                <img data-weatherIcon>
+                <p data-temp></p>
+
+                <div class="parameter-container">
+
+                    <div class="parameter">
+                        <i class="fa-solid fa-wind"></i>
+                        <p>windspeed</p>
+                        <p data-windspeed></p>
+                    </div>
+
+                    <div class="parameter">
+                        <i class="fa-solid fa-droplet"></i>
+                        <p>humidity</p>
+                        <p data-humidity></p>
+                    </div>
+
+                    <div class="parameter">
+                        <i class="fa-solid fa-cloud"></i>
+                        <p>clouds</p>
+                        <p data-cloudiness></p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <script src="https://kit.fontawesome.com/c0ecd255c0.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

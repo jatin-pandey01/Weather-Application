@@ -1,0 +1,300 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+:root{
+    --colorDark1: #112D4E;
+    --colorDark2: #3F72AF;
+    --colorLight1: #DBE2EF;
+    --colorLight2: #F9F7F7;
+}
+
+body{
+    max-width: 100vw;
+    min-height: 100vh;
+    color: var(--colorLight2);
+    background-color: #112d4e;
+    background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);  
+    /* background-repeat: repeat; */
+}
+
+
+h1{
+    text-align: center;
+    margin-block: 2rem;
+    text-transform: uppercase;
+    word-spacing: 2px;
+    letter-spacing: 1.75px;
+}
+
+.tab.current-tab{
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 4px;
+}
+
+.tab-container{
+    display: flex;
+    /* text-align: center; */
+    justify-content: space-between;
+    max-width: 550px;
+    margin: 0 auto; /*top-bottom left-right*/
+    margin-top: 4rem;
+}
+
+@media (max-width: 768px){
+    .tab-container {
+        margin-top: 2rem;
+        width: 80%;
+    }
+    .parameter-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+.tab{
+    cursor: pointer;
+    padding: 5px 8px;
+    letter-spacing: 1.75px;
+    font-size: 0.875rem;
+}
+
+.weather-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-block: 4rem; /* Set the top and bottom margin */
+}
+
+.btn{
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: var(--colorDark2);
+    cursor: pointer;
+    border: none;
+    color: var(--colorLight2);
+    padding: 10px 30px;
+}
+
+.fa-location-dot{
+    color: var(--colorLight2);
+    font-size: 2rem;
+    padding-top: 25px;
+    padding-left: 29px;
+    background-color: rgba(40, 152, 40, 1);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+}
+
+.sub-container{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grant-location-container p:nth-child(2){
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.grant-location-container p:nth-child(3){
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.75px;
+    text-align: center;
+}
+.grant-location-container{
+    display: none;
+}
+.grant-location-container.active{
+    display: flex;
+}
+
+.form-container{
+    display: none;
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px;
+}
+
+.form-container.active{
+    display: flex;
+}
+
+.form-container input{
+    all: unset;
+    width: 90%;
+    padding: 0.65rem 1rem;
+    border-radius: 10px;
+    color: var(--colorLight2);
+    background-color: rgba(219, 226, 239, 0.5);
+}
+
+.form-container input::placeholder{
+    color: var(--colorLight2);
+}
+
+.form-container input:focus{
+    outline: 3px solid rgba(255,255,255,0.7);
+}
+
+.form-container button{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: var(--colorDark2);
+    border: none;
+    cursor: pointer;
+}
+
+.fa-magnifying-glass{
+    font-size: 1.25rem;
+    color: var(--colorLight2);
+}
+
+.fa-spinner{
+    color: var(--colorLight2);
+    font-size: 8rem;
+    animation: rotation 0.5s infinite linear;
+    margin-top: 10px;
+    /* transition: all 1s linear; */
+    margin-bottom: 2rem;
+}
+    
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-container p{
+    text-transform:uppercase;
+}
+
+.loading-container{
+    display: none;
+}
+
+.loading-container.active{
+    display: flex;
+}
+
+.user-info-container{
+    display: none;
+}
+
+.user-info-container.active{
+    display: flex;
+}
+
+.name{
+    display: flex;
+    gap: 0 0.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.user-info-container p[data-weatherDesc]{ /* New way to access using custom attribute */
+    font-size: 1.5rem;
+    font-weight: 200;
+    text-transform: capitalize;
+}
+
+.user-info-container img{
+    width: 90px;
+    height: 90px;
+}
+
+.user-info-container p[data-temp]{
+    font-size: 2.75rem;
+    font-weight: 700;
+}
+.name p{
+    font-size: 2rem;
+}
+.name img[data-countryIcon]{
+    width: 40px;
+    height: 30px;
+}
+
+.parameter-container{
+    display: flex;
+    gap: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.parameter{
+    max-width: 200px;
+    padding: 0.2rem 3.5rem;
+    padding-top: 0.5rem;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px 0;
+}
+
+.parameter p:first-of-type{
+    font-size: 1.75rem;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+.parameter p:last-of-type{
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+.fa-wind{
+    color: rgb(58, 58, 214);
+    font-size: 50px;
+}
+
+.fa-droplet{
+    color: rgb(123, 239, 123);
+    font-size: 50px;
+}
+
+.fa-cloud{
+    color: rgb(42, 213, 219);
+    font-size: 50px;
+}
+
+.error-container{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-triangle-exclamation{
+    font-size: 5rem;
+}
+
+.error-container.active{
+    display: flex;
+}
